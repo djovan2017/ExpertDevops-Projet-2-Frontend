@@ -1,0 +1,16 @@
+{
+  "temp-dir": ".nyc_output",
+  "report-dir": "coverage",
+  "reporter": [
+    "text-summary",
+    "html"
+  ],
+  "exclude": [
+    "src/main.ts"
+  ],
+  "check-coverage": true,
+  "statements": 80,
+  "branches": 80,
+  "functions": 80,
+  "lines": 80
+}

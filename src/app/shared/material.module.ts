@@ -25,6 +25,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -53,6 +54,7 @@ const materialModules = [
   MatTableModule,
   MatTabsModule,
   MatToolbarModule,
+  MatTooltipModule,
   MatFormFieldModule,
   MatButtonToggleModule,
   MatTreeModule,
@@ -60,6 +62,7 @@ const materialModules = [
   PortalModule
 ];
 
+/** Regroupe les modules Angular Material/CDK utilisés par les pages, pour un import unique dans les composants standalone. */
 @NgModule({
   imports: [
     ...materialModules

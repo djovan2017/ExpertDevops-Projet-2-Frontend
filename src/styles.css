@@ -2,3 +2,41 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.status-tooltip-multiline {
+  white-space: pre-line;
+  max-width: 280px !important;
+}
+
+.status-tooltip-multiline .mat-mdc-tooltip-surface {
+  background-color: #fdf6b0;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 10px;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.35);
+  font-weight: 500;
+  text-align: left;
+}
+
+.mat-mdc-tooltip-panel-above .status-tooltip-multiline::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px 8px 0 8px;
+  border-style: solid;
+  border-color: #000 transparent transparent transparent;
+}
+
+.mat-mdc-tooltip-panel-above .status-tooltip-multiline::before {
+  content: '';
+  position: absolute;
+  top: calc(100% - 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px 6px 0 6px;
+  border-style: solid;
+  border-color: #fdf6b0 transparent transparent transparent;
+  z-index: 1;
+}

@@ -1,0 +1,17 @@
+<div class="card m-3">
+  <h5 class="card-header">Gestion des étudiants</h5>
+  <div class="card-body">
+    <div class="list-group">
+      @for (action of actions; track action.path) {
+        <a [routerLink]="action.path" class="list-group-item list-group-item-action">
+          {{ action.label }}
+        </a>
+      }
+    </div>
+    <div class="text-center mt-3">
+      <button class="btn btn-secondary" type="button" (click)="logout()">
+        Déconnexion
+      </button>
+    </div>
+  </div>
+</div>

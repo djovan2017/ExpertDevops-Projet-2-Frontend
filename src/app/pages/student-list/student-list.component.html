@@ -1,0 +1,43 @@
+<div class="card m-3">
+  <h5 class="card-header">Liste des étudiants</h5>
+  <div class="card-body">
+    @if (loading) {
+      <p>Chargement...</p>
+    }
+
+    @if (error) {
+      <div class="alert alert-danger">Impossible de charger la liste des étudiants.</div>
+    }
+
+    @if (!loading && !error) {
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Prénom</th>
+            <th>Nom</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (student of students; track student.id) {
+            <tr>
+              <td>{{ student.id }}</td>
+              <td>{{ student.firstName }}</td>
+              <td>{{ student.lastName }}</td>
+              <td>{{ student.email }}</td>
+            </tr>
+          } @empty {
+            <tr>
+              <td colspan="4">Aucun étudiant trouvé.</td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+
+    <a routerLink="/students/creer" class="btn btn-primary">Créer un étudiant</a>
+    <a routerLink="/students" class="btn btn-secondary">Retour au menu</a>
+    <button class="btn btn-secondary" type="button" (click)="logout()">Déconnexion</button>
+  </div>
+</div>

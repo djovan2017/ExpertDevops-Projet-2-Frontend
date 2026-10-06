@@ -51,7 +51,6 @@ export class RegisterComponent implements OnInit {
       .subscribe(
       () => {
         alert('SUCCESS!! :-)');
-        // TODO : router l'utilisateur vers la page de login
       },
     );
   }

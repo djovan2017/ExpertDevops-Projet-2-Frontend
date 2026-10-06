@@ -40,3 +40,22 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+.nyc_output/
+coverage/
+dist-instrumented/
+README_old.md
+# E2E coverage temporary files
+.instrumented-tmp/
+.nyc_filtered/
+.nyc_output-backup/
+coverage-filtered/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Temporary files
+*.tmp
+*.bak
+*~

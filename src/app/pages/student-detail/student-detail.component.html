@@ -1,0 +1,49 @@
+<div class="card m-3">
+  <h5 class="card-header">Détails d'un étudiant</h5>
+  <div class="card-body">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Id de l'étudiant</label>
+        <input
+          type="number"
+          formControlName="id"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': submitted && form['id'].errors }"
+        />
+        @if (submitted && form['id'].errors) {
+          <div class="invalid-feedback">
+            @if (form['id'].errors?.['required']) {
+              <div>L'id est requis</div>
+            }
+          </div>
+        }
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary mr-1" type="submit" [disabled]="loading">
+          @if (loading) {
+            Recherche...
+          } @else {
+            Rechercher
+          }
+        </button>
+        <a routerLink="/students" class="btn btn-secondary mr-1">Retour au menu</a>
+        <button class="btn btn-secondary" type="button" (click)="logout()">Déconnexion</button>
+      </div>
+
+      @if (submitted && error) {
+        <div class="alert alert-danger mt-3">Étudiant introuvable.</div>
+      }
+    </form>
+
+    @if (student) {
+      <table class="table mt-3">
+        <tbody>
+          <tr><th>Id</th><td>{{ student.id }}</td></tr>
+          <tr><th>Prénom</th><td>{{ student.firstName }}</td></tr>
+          <tr><th>Nom</th><td>{{ student.lastName }}</td></tr>
+          <tr><th>Email</th><td>{{ student.email }}</td></tr>
+        </tbody>
+      </table>
+    }
+  </div>
+</div>

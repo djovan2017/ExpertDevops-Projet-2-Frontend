@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "etudiant-frontend": {
+    "student-frontend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/etudiant-frontend",
+            "outputPath": "dist/student-frontend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "etudiant-frontend:build:production"
+              "buildTarget": "student-frontend:build:production"
             },
             "development": {
-              "buildTarget": "etudiant-frontend:build:development",
+              "buildTarget": "student-frontend:build:development",
               "proxyConfig": "proxy.conf.json"
             }
           },
@@ -74,5 +74,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "de084155-6576-4d67-a54f-afd7bf10e4f7"
   }
 }
